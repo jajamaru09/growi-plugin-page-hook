@@ -1,0 +1,1 @@
+const i="growi-plugin-practice2";function t(){console.log(`[${i}] activated`)}function n(){}window.pluginActivators==null&&(window.pluginActivators={});window.pluginActivators[i]={activate:t,deactivate:n};
