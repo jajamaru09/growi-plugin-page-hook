@@ -16,7 +16,7 @@ export function createPageChangeListener(callback: PageChangeCallback): {
     if (key === lastKey) return;
     lastKey = key;
     try {
-      callback({ pageId, path: `/${pageId}`, mode });
+      callback({ pageId: `/${pageId}`, mode });
     } catch (e) {
       console.error('[growiNavigation] callback error', e);
     }

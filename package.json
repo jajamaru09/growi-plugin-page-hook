@@ -1,5 +1,5 @@
 {
-  "name": "growi-plugin-practice1",
+  "name": "growi-plugin-practice2",
   "version": "0.1.0",
   "description": "GROWI plugin to output pageId in the console every time the page is loaded.",
   "type": "module",
