@@ -1,7 +1,7 @@
 {
-  "name": "growi-plugin-practice2",
+  "name": "growi-plugin-page-hook",
   "version": "0.1.0",
-  "description": "GROWI plugin to output pageId in the console every time the page is loaded.",
+  "description": "A base template for GROWI script plugins that need to hook into page navigation events.",
   "type": "module",
   "keywords": [
     "growi",

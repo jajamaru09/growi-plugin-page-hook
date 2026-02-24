@@ -20,7 +20,7 @@ declare global {
 
 // ─── 定数 ────────────────────────────────────────────────────────
 // package.json の name フィールドと一致させる（GROWIがキーとして使用する）
-const PLUGIN_NAME = 'growi-plugin-practice2';
+const PLUGIN_NAME = 'growi-plugin-page-hook';
 
 // ─── ページ遷移ハンドラ ───────────────────────────────────────────
 /**
