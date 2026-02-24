@@ -15,12 +15,12 @@ export function createPageChangeListener(callback: PageChangeCallback): {
 } {
     let lastKey: string | null = null;
 
-    function tryFire(pageId: string, mode: PageMode): void {
-        const key = `${pageId}::${mode}`;
+    function tryFire(pageId: string, mode: PageMode, revisionId?: string): void {
+        const key = `${pageId}::${mode}::${revisionId ?? ''}`;
         if (key === lastKey) return;
         lastKey = key;
         try {
-            callback({ pageId: `/${pageId}`, mode });
+            callback({ pageId: `/${pageId}`, mode, revisionId });
         } catch (e) {
             console.error('[growiNavigation] callback error', e);
         }
@@ -30,7 +30,8 @@ export function createPageChangeListener(callback: PageChangeCallback): {
         const dest = new URL(e.destination.url);
         const pageId = extractPageId(dest.pathname);
         if (!pageId) return;
-        tryFire(pageId, hashToMode(dest.hash));
+        const revisionId = dest.searchParams.get('revisionId') ?? undefined;
+        tryFire(pageId, hashToMode(dest.hash), revisionId);
     }
 
     function start(): void {
@@ -44,7 +45,8 @@ export function createPageChangeListener(callback: PageChangeCallback): {
         const { pathname, hash } = location;
         const pageId = extractPageId(pathname);
         if (pageId) {
-            tryFire(pageId, hashToMode(hash));
+            const revisionId = new URL(location.href).searchParams.get('revisionId') ?? undefined;
+            tryFire(pageId, hashToMode(hash), revisionId);
         }
     }
 

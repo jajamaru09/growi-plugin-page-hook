@@ -3,6 +3,7 @@ export type PageMode = 'view' | 'edit';
 export interface GrowiPageContext {
   pageId: string;
   mode: PageMode;
+  revisionId?: string;
 }
 
 const PAGE_ID_RE = /^\/([0-9a-f]{24})$/i;
