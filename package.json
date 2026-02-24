@@ -2,6 +2,7 @@
   "name": "growi-plugin-page-hook",
   "version": "0.1.0",
   "description": "A base template for GROWI script plugins that need to hook into page navigation events.",
+  "license": "MIT",
   "type": "module",
   "keywords": [
     "growi",
